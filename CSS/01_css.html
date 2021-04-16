@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> css </title>
+    <!--internal 스타일 : style 태그에 css를 작업-->
+    <style type="text/css"> /*    type="text/css" 부분은 생략 가능*/
+        /* css 주석은 이것만 가능 */
+/*
+        selector(대상){
+            속성(항목): 값;
+            속성(항목): 값;
+        }*/
+        h1{
+            color: crimson;
+        }
+    </style>
+    <!--
+        link 태그: 외부 파일을 HTML과 연결한다.
+        1. href: 연결할 파일의 경로를 지정한다.
+        2. rel : HTML과 연결할 파일의 관계(relation)를 지정한다.
+    -->
+    <link href="./01_css.css" rel="stylesheet">
+    <!--동일한 대상에 대한 css가 나타나면 덮어쓰기. (나중에 작업한대로 적용)-->
+</head>
+<body>
+    <h1 style="color:orange"> Hello CSS</h1>
+</body>
+
+</html>
