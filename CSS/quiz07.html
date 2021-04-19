@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>quiz07</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        ul.flex-style{
+            /*플렉스 박스*/
+            display: flex;
+            justify-content: space-between;
+           /* ul 기본 속성 없애기 */
+            padding-left: 0px;
+            list-style-type: none;
+
+
+
+
+            /* 위아래 테두리*/
+            border-top: 2px solid lightgray;
+            border-bottom: 2px solid lightgray;
+
+
+            width:700px;
+
+
+
+
+        }
+        ul.flex-style > li{
+
+
+            width: 70px;
+            height:50px;
+            line-height: 50px;
+
+
+            color: #03c75a;
+        }
+        li > #stack {
+            color: #03c75a;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        ul.flex-style2{
+
+            width:100%; /* body(부모) 기준 */
+            display:flex;
+            justify-content: center;
+
+            list-style-type: none;
+            padding: 0;
+
+
+            border-bottom: 2px solid grey;
+            border-top: 1px solid lightgrey;
+        }
+        ul.flex-style2 > li{
+           margin-right:40px;
+
+        }
+
+        ul.flex-style2 > li:hover{
+            border-bottom: 2px solid red;
+            color:red;
+            cursor:pointer;
+        }
+        ul.flex-style2> li > a{
+            display: block;
+            width: 100%;
+            padding: 20px 10px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 900;
+            font-size:20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="outer">
+    <ul class="flex-style">
+        <li ><i   class="fas fa-envelope-open-text"></i><a id="stack" href="https://mail.naver.com/">메일</a></li>
+        <li><a id="stack" href="https://section.cafe.naver.com/">카페</a></li>
+        <li><a id="stack" href="https://section.blog.naver.com/">블로그</a></li>
+        <li><a id="stack" href="https://kin.naver.com/">지식iN</a></li>
+        <li><a id="stack" href="https://shopping.naver.com/">쇼핑</a></li>
+        <li><a id="stack" href="https://order.pay.naver.com/home">Pay</a></li>
+        <li><a id="stack" href="https://tv.naver.com/"><i class="fas fa-play"></i>TV</a></li>
+    </ul>
+    </div>
+
+    <div>
+        <ul class="flex-style2">
+            <li><a >증권 홈</a></li>
+            <li><a >시장정보</a></li>
+            <li><a >이슈</a></li>
+            <li><a >종목게시판</a></li>
+            <li><a >뉴스</a></li>
+            <li><a >MY종목보드</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
