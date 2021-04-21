@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>티스토리 로그인</title>
+	<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/www/style/top/font.css">
+	<style>
+		html{
+
+			position: fixed;
+			top:0;
+			bottom:0;
+			left:0;
+			right:0;
+			background-image:url(https://t1.daumcdn.net/tistory_admin/static/top/pc/bg_login_white_200910.png);
+			background-size:cover;
+			background-repeat: no-repeat;
+			background-position: 50% 0;
+
+
+		}
+		body{
+			justify-content: center;
+			align-content: center;
+		}
+		.screen_out{
+			width:0;
+			height:0;
+			overflow: hidden;
+			visibility:hidden;
+		}
+		#small-logo{
+			position:fixed;
+			top: 30px;
+			left: 50px;
+		}
+		#container{
+			position:relative;
+			margin: auto;
+			margin-top: 120px;
+
+			width:390px;
+			height:100%;
+		}
+		.title{
+
+			display:block;
+			width:100%;
+			height:32px;
+			text-align: center;
+			font-size:32px;
+			margin-bottom:30px;
+		}
+
+		form{
+			width:100%;
+		}
+		.box_login{
+			width:100%;
+		}
+		fieldset{
+			border:none;
+			width:100%;
+		}
+
+		.inp_text{
+			width:100%;
+			padding: 18px 19px 19px;
+			margin:0;
+			border: 1px solid #dddddd;
+			box-sizing: border-box;
+		}
+		.inp_text:nth-of-type(1){
+			padding: 3px 3px 0 0;
+		}
+		.inp_text:nth-of-type(2){
+			padding: 0 0 3px 3px;
+		}
+		.inp_text > input{
+			width:100%;
+			height:100%;
+			border: 0;
+			outline: 0;
+		}
+		.btn-login{
+			width:100%;
+			height:48px;
+			border-radius: 3px;
+			margin: 20px 0 0;
+			background-color: #b9b9b9;
+			border:0;
+			color:white;
+			font-size:16px;
+		}
+		.login_append{
+			width: 100%;
+			padding: 10px 0 0;
+			overflow: hidden;
+		}
+		.login_append > .inp_chk{
+			float:left;
+		}
+		.login_append > .txt_find{
+			float:right;
+			display:float;
+		}
+		#keepLogin{
+			visibility: hidden;
+		}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2 class="screen_out"	>로그인</h2>
+        <strong class="title">TISTORY</strong>
+        <form method="post" action="https://www.tistory.com/auth/login">
+            <fieldset>
+                <legend class="screen_out">로그인 정보 입력폼</legend>
+                <!-- ID,Password -->
+                <div class="box_login">
+                    <!-- ID -->
+                    <div class="inp_text">
+                        <label for="loginId" class="screen_out">로그인</label>
+                        <input type="email" id="loginId" placeholder="ID">
+                    </div>
+                    <!-- Password -->
+                    <div class="inp_text">
+                        <label for="loginPw" class="screen_out">비밀번호</label>
+                        <input type="password" id="loginPw" placeholder="Password">
+                    </div>
+                </div>
+                <!-- 로그인버튼 -->
+                <button class="btn-login">로그인</button>
+                <!-- 로그인상태유지,아이디/비밀번호찾기 -->
+                <div class="login_append">
+                    <!-- 로그인상태유지 -->
+                    <div class="inp_chk">
+                        <input type="checkbox" id="keepLogin">
+                        <label for="keepLogin">로그인 상태 유지</label>
+                    </div>
+                    <!-- 아이디/비밀번호찾기 -->
+                    <span class="txt_find">
+                        <a>아이디</a> / <a>비밀번호 찾기</a>
+                    </span>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
