@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>quiz15</title>
+	<style>
+		html, body{
+			padding: 0;
+			margin: 0;
+		}
+		aside{
+			width:300px;
+			border: 1px solid black;
+			box-sizing: border-box;
+		}
+		input[type="radio"]{
+			display: none;
+		}
+		.content-list{
+			display: none;
+		}
+		/* id가 front인 radio가 선택되었다면 */
+		#front:checked ~ div:nth-of-type(2){
+			display: block;
+		}
+		#back:checked ~ div:nth-of-type(3){
+			display: block;
+		}
+		.tab-menu{
+			padding:0;
+			width:300px;
+			float:flex;
+		}
+		.tab-menu > label{
+			box-sizing: border-box;
+			float:left;
+			margin:0;
+			display: inline-block;
+			width: 50%;
+			padding: 20px 0;
+			/*상하 20px height 높이고, 텍스트 세로 가운데 정렬 효과*/
+			text-align: center;
+			background-color: hotpink;
+		}
+		#front:checked ~ .tab-menu > label:nth-of-type(1){
+			font-weight: 900;
+		}
+		#back:checked ~ .tab-menu > label:nth-of-type(2){
+			font-weight: 900;
+		}
+
+		.content-list > ul {
+			list-style-type: none;
+			padding:0;
+		}
+		.content{
+			border-top: 1px solid black;
+		}
+		.thumbnail{
+			margin-top:61px;
+			width: 100px;
+			height: 60px;
+			background-repeat: no-repeat;
+			background-size: 100px 60px;
+		}
+		#thumb1{background-image: url(images/cat.jpg);}
+		#thumb2{background-image: url(images/dog.jpg);}
+		#thumb3{background-image: url(images/frog.jpg);}
+		#thumb4{background-image: url(images/eagle.jpg);}
+		#thumb5{background-image: url(images/hedgehog.jpg);}
+		#thumb6{background-image: url(images/lion.jpg);}
+
+	</style>
+</head>
+<body>
+	<aside>
+		<!--상단 탭-->
+		<input type="radio" name="tab" id="front" checked>
+		<input type="radio" name="tab" id="back">
+		<div class="tab-menu">
+			<label for="front">프론트엔드</label>
+			<label for="back">백엔드</label>
+		</div>
+		<!--프론트엔드 클릭했을 때 나타날 화면-->
+		<div id="front-content" class="content-list">
+			<ul>
+				<!--작은 이미지-->
+				<li class="content">
+					<div id="thumb1" class="thumbnail"></div>
+					<!-- 내용 -->
+					<div id="" class="description">
+						<h3>HTML</h3>
+						<p>HyperText Markup Language</p>
+					</div>
+				</li>
+				<li class="content">
+					<div id="thumb2" class="thumbnail"></div>
+					<!-- 내용 -->
+					<div class="description">
+						<h3>CSS</h3>
+						<p>Cascading Style Sheet</p>
+					</div>
+				</li>
+				<li class="content">
+					<div id="thumb3" class="thumbnail"></div>
+					<!-- 내용 -->
+					<div class="description">
+						<h3>JavaScript</h3>
+						<p>ECMA Script</p>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+		<!--백엔드 클릭했을 때 나타날 화면-->
+		<div id="back-content" class="content-list">
+			<ul>
+				<!--작은 이미지-->
+				<li class="content">
+					<div id="thumb4" class="thumbnail"></div>
+					<!-- 내용 -->
+					<div id="" class="description">
+						<h3>DB</h3>
+						<p>DataBase</p>
+					</div>
+				</li>
+				<li class="content">
+					<div id="thumb5" class="thumbnail"></div>
+					<!-- 내용 -->
+					<div class="description">
+						<h3>DBMS</h3>
+						<p>DataBase Management System</p>
+					</div>
+				</li >
+				<li class="content">
+					<div id="thumb6" class="thumbnail"></div>
+					<!-- 내용 -->
+					<div class="description">
+						<h3>SQL</h3>
+						<p>Oracle</p>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+
+	</aside>
+</body>
+
+</html>

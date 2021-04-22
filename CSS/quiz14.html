@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>quiz14</title>
+	<meta name="viewport" content="width=device width, initial-scale=1.0">
+	<style>
+		#container{
+			padding:0;
+			width: 1400px;
+			margin: 0 auto;
+		}
+		#container > div{
+			width: 500px;
+			height: 150px;
+			margin: 30px;
+			float:left;
+
+		}
+		#product-list{
+			width:100%;
+			display:flex;
+			justify-content: space-between;
+		}
+
+		#fruit > img{
+			display:block;
+			background-repeat: no-repeat;
+			width:300px;
+			height:200px;
+
+		}
+		#fruit > img:hover + #blank{
+			opacity: 1;
+			transform: translateY(-200px);
+
+		}
+
+		#fruit{
+			position:relative;
+			margin:30px;
+		}
+
+
+
+		#fruit > #blank{
+			width:300px;
+			height: 200px;
+			background-color: rgba(0,0,0,0.7);
+			/*red green blue opacity*/
+
+			color: white;
+			z-index:1;
+			position: absolute;
+			top: 200px;
+			text-align: center;
+			opacity: 0;
+			transition-property: all;
+			transition-duration: 1s;
+			transition-timing-function: ease-out;
+		}
+	</style>
+	</head>
+<body>
+	<div id="container">
+		<div id=product-list>
+			<div id="fruit">
+				<img src="images/cat.jpg">
+				<div id="blank">
+					<h1>고양이</h1>
+					<p>귀여운 고양이</p>
+					<p>심쿵합니다.</p>
+				</div>
+			</div>
+			<div id="fruit">
+				<img src="images/dog.jpg">
+				<div id="blank">
+					<h1>강아지</h1>
+					<p>커여운 강아지</p>
+					<p>귀엽습니다.</p>
+				</div>
+			</div>
+			<div id="fruit">
+				<img src="images/frog.jpg">
+				<div id="blank">
+					<h1>개구리</h1>
+					<p>폴짝 뛰는 개구리</p>
+					<p>놀라지 마세요.</p>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+
+	</div>
+
+</body>
+
+</html>
