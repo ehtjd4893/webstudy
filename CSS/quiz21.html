@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>화면구현_평가대비연습5</title>
+    <style>
+		body{
+			display:flex;
+			justify-content: center;
+		}
+		#container{
+			width:500px;
+			height:100%;
+
+			display:inline-block;
+
+			text-align: center;
+			box-sizing: border-box;
+		}
+		#container > h1{
+			color: lime;
+		}
+		#container > div{
+			display: inline-block;
+			box-sizing: border-box;
+			width:100%;
+		}
+		#need_box{
+			width:100%;
+			height:320px;
+			border:none;
+		}
+		#option_box{
+			width:100%;
+			height:320px;
+
+		}
+		#title{
+			box-sizing: border-box;
+			background-color: darkgray;
+			width: 100%;
+			height: 40px;
+			border-top: 1px solid grey;
+			border-bottom: 1px solid grey;
+			padding-top: 8px;
+			font-weight: 900;
+		}
+		#container > div > div{
+			clear:both;
+			width:100%;
+			height: 40px;
+			display:block;
+
+		}
+		#container > div > div > label{
+			box-sizing: border-box;
+			float:left;
+			width: 130px;
+			text-align: left;
+			padding: 10px 10px;
+		}
+		#container > div > div > input{
+			box-sizing: border-box;
+			padding: 10px 10px;
+			float:left;
+			width: 200px;
+			margin: 10px 30px;
+			height: 20px;
+		}
+		#container > div > div > input:focus{
+			background-color:aquamarine;
+		}
+		#container > div > div > div{
+			box-sizing: border-box;
+			float:left;
+			width: 300px;
+			margin: 10px 0;
+			height: 20px;
+			font-size: 12px;
+
+
+		}
+		#container > div > div > div > #front{
+			/*margin-left:-50px;*/
+		}
+		#container > div > div > div > #phone{
+			width: 40px;
+		}
+		#email{
+			width:100px;
+		}
+		#domain{
+			width:100px;
+		}
+	</style>
+
+</head>
+<body>
+	<form method="post" action="#">
+	<div id="container">
+		<h1>회원가입 폼</h1>
+		<div id="need_box">
+			<div id="title">필수정보</div>
+			<div><label for="id">아이디</label><input type="text" id="id"></div>
+			<div><label for="pw">비밀번호</label><input type="text" id="pw"></div>
+			<div><label for="pw_re">비밀번호 확인</label><input type="text" id="pw_re"></div>
+			<div><label for="name">이름</label><input type="text" id="name"></div>
+			<div><label>성별</label>
+				<div>
+				<input type="radio" name="gender" checked>선택안함
+				<input type="radio" name="gender">남자
+				<input type="radio" name="gender">여자
+				</div>
+			</div>
+			<div><label>연락처</label>
+				<div>
+				<select id="front">
+					<option selected>010</option>
+					<option >02</option>
+					<option >032</option>
+					<option >031</option>
+				</select> ㅡ
+				<input type="text" id="phone"> ㅡ
+				<input type="text" id="phone">
+				</div>
+			</div>
+		</div>
+		<div id="option_box">
+			<div id="title">선택정보</div>
+			<div><label for="nick">닉네임</label><input type="text" id="nick"></div>
+			<div><label for="nick">이메일</label>
+				<div>
+					<input type="text" id="email"> @
+					<input list="domainlist" id="domain">
+					<datalist id="domainlist">
+						<option>naver.com</option>
+						<option>gmail.com</option>
+						<option>daum.net</option>
+						<option>nate.com</option>
+					</datalist>
+				</div>
+			</div>
+			<div><label>이메일 수신</label>
+				<div>
+				<input type="radio" name="getmail" checked>수신
+				<input type="radio" name="getmail">미수신
+
+				</div>
+			</div>
+
+			<div><label>SMS 수신</label>
+				<div>
+				<input type="radio" name="getsms" checked>수신
+				<input type="radio" name="getsms">미수신
+				</div>
+			</div>
+			<div><label>취미활동</label>
+				<div>
+				<input type="checkbox" name="hobby" >독서
+				<input type="checkbox" name="hobby">낚시
+				<input type="checkbox" name="hobby">수영
+
+				</div>
+			</div>
+			<div><label>프로필사진</label>
+				<div>
+				<input type="button" name="hobby" value="파일 선택">
+				<span>선택된 파일 없음</span>
+
+				</div>
+			</div>
+
+		</div>
+		<footer>
+			<input type="submit" value="회원가입">
+			<input type="reset" value="다시작성">
+		</footer>
+	</div>
+	</form>
+</body>
+</html>

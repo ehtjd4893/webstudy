@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>quiz19</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<style>
+		body{
+			display:flex;
+			justify-content: center;
+			margin-top: 100px;
+		}
+		#container{
+			display:inline-block;
+			width: 600px;
+			border:none;
+			height: 350px;
+			background-color:beige;
+			box-sizing: border-box;
+			padding:0;
+			margin:0;
+		}
+		header{
+			width: 600px;
+			height:50px;
+			background-color: darkgrey;
+			box-sizing: border-box;
+			margin:0;
+			text-align: center;
+			padding-top:5px;
+			box-shadow: 0 2px 2px 2px #6c6262;
+			overflow:hidden;
+		}
+		header > span{
+			font-size: 24px;
+			font-weight: 400;
+
+		}
+		#container > div{
+			width:50%;
+			height: 300px;
+			box-sizing: border-box;
+			border: none;
+		}
+		#left_box{
+			float:left;
+		}
+		#user_box, #pw_box{
+			position:relative;
+			display: flex;
+			background-color: darkgray;
+			margin: 20px auto 40px;
+			width: 80%;
+			height: 50px;
+			border: 1px solid black;
+			border-radius: 5px;
+			color: white;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		#user_box > i, #pw_box > i{
+			margin-top:5px;
+			margin-left:10px;
+			float:left;
+		}
+		#user_box > input, #pw_box > input{
+			margin: 0 20px;
+			width: 85%;
+			float:right;
+			background-color: darkgray;
+			border: none;
+
+		}
+		#user_box > span, #pw_box > span{
+			position:absolute;
+			color: darkgray;
+			bottom: -20px;
+			right: 0;
+		}
+
+
+		#right_box{
+			float:right;
+		}
+		#right_box > div{
+			margin: 20px;
+			width: 80%;
+			height: 50px;
+			border-radius: 5px;
+			color:white;
+			padding: 15px 10px 10px;
+			box-sizing: border-box;
+			cursor:pointer;
+		}
+		#twt{
+			background-color: deepskyblue;
+		}
+
+		#fb{
+			background-color: blue;
+		}
+		#goog{
+			background-color: red;
+		}
+		#right_box > div > i{
+			margin-left: 10px ;
+		}
+		input[type="button"]{
+
+			background-color:inherit;
+			border:none;
+			color:white;
+			font-size:16px;
+			width: 80%;
+		}
+
+		input[type="submit"]{
+			background-color:#b51a39;
+			color:white;
+			width: 150px;
+			height: 60px;
+			border:none;
+			border-radius: 5px;
+			float:right;
+			margin-right:30px;
+			cursor:pointer;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<span>WELCOME</span>
+		</header>
+		<div id="left_box">
+			<form method="post" action="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com">
+				<div id="user">
+					<div id="user_box" onClick="location.href='#i'">
+						<i class="far fa-smile"></i>
+						<input id="i" type="text" placeholder="User or Email">
+						<span>Forgot your username?</span>
+					</div>
+				</div>
+				<div id="pw_box" onClick="location.href='#p'">
+					<i class="fas fa-lock-open"></i>
+					<input id="p" type="password" placeholder="Password">
+						<span>Forgot your password?</span>
+				</div>
+				<input type="submit" value="LOGIN NOW">
+			</form>
+		</div>
+		<div id="right_box" >
+			<div id="twt" onClick="location.href='https://twitter.com/?lang=ko'">
+				<i class="fab fa-twitter"></i>
+				<input id="t" type="button" value="Log in with Twitter" >
+			</div>
+			<div id="fb" onClick="location.href='http://www.facebook.com'">
+				<i class="fab fa-facebook"></i>
+				<input id="f" type="button" value="Log in with Facebook"  >
+			</div>
+			<div id="goog" onClick="location.href='http://www.google.com'">
+				<i class="fab fa-google-plus-g"></i>
+				<input id="g" type="button" value="Log in with Google+" >
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

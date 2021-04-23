@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>quiz16</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<style>
 		html{
 			font-size: 12px;
@@ -42,9 +43,10 @@
 			display: inline-block;
 			width:460px;
 			height:51px;
-
+			padding-right:0;
 			box-sizing:border-box;
 			position:relative;
+
 		}
 		.ps_box > label{
 			float:left;
@@ -52,16 +54,27 @@
 			font-weight: 700;
 			margin-bottom: 10px;
 		}
+		label > span{
+			font-size: 12px;
+			font-weight:100;
+		}
 		.ps_box > input[type="text"]{
 			width:460px;
 			height:51px;
 			border: 1px solid #dadada;
 		}
+		#id, #pw, #pw_re{
+			float:left;
+			width:460px;
+		}
 		#address{
-			z-index: 1;
+			border:none;
+			width:70px;
+			height:31px;
+			background-color:white;
 			position: absolute;
 			top: 46px;
-			right: 13px;
+			right: 10px;
 			font-size: 15px;
 			line-height: 18px;
 			color: #8e8e8e;
@@ -70,31 +83,33 @@
 
 			width:100%;
 			height:100%;
-			display: inline-block;
+
+			display: flex;
+			justify-content: space-between;
 		}
 		.bd_box > #bd{
 
-			display: inline-block;
-			float:left;
+			/*float:left;*/
+			justify-content: space-between;
 			margin-top: 30px;
-			width: 120px;
+			width: 30%;
 			height:100%;
 			border: 1px solid #dadada;
-			margin-left:10px;
+/*			margin-left:10px;*/
 		}
 		select{
 			width:460px;
 			height:51px;
 		}
 		.bd_box > select{
-			display: inline-block;
-			float:left;
+
+			justify-content: space-between;
 			margin-top: 30px;
-			width: 126px;
+			width: 30%;
 			height: 55px;
 			border: 1px solid #dadada;
-			margin-left:30px;
-			margin-right: 30px;
+/*			margin-left:30px;
+			margin-right: 30px;*/
 		}
 
 		#phone_num{
@@ -121,6 +136,32 @@
 			font-weight: 700;
 			font-size: 20px;
 		}
+
+		footer{
+			display: flex;
+			justify-content: center;
+			overflow:hidden;
+		}
+		.f_box{
+			margin-top: 30px;
+			width:100%;
+			color:grey;
+		}
+		.f_box > a:nth-of-type(2)  {
+			border-left: 1px solid lightgrey;
+			border-right: 1px solid lightgrey;
+			margin: 5px;
+			padding: 0 5px;
+		}
+		 .f_box > a:nth-of-type(3){
+			border-right: 1px solid lightgrey;
+			margin-right: 5px;
+			padding-right:5px;
+		}
+		#corp{
+			font-weight:700;
+
+		}
 	</style>
 </head>
 <body>
@@ -146,6 +187,7 @@
 					<div class="ps_box">
 						<label for="pw">비밀번호</label>
 						<input type="text" id="pw">
+						<span id="address"><i class="fas fa-lock"></i></span>
 					</div>
 				</div>
 
@@ -154,8 +196,9 @@
 					<div class="ps_box">
 						<label for="pw_re">비밀번호 확인</label>
 						<input type="text" id="pw_re">
+						<span id="address"><i class="far fa-check-circle"></i></span>
 					</div>
-				</div>
+					</div>
 				<br><br><br>
 				<div class="join_row">
 					<!-- 이름 인풋상자 -->
@@ -207,7 +250,7 @@
 				<div class="join_row">
 					<!-- 이름 인풋상자 -->
 					<div class="ps_box">
-						<label for="email">본인 확인 이메일</label>
+						<label for="email">본인 확인 이메일<span>(선택)</span></label>
 						<input type="text" id="email">
 					</div>
 				</div>
@@ -232,7 +275,16 @@
 		</section>
 
 		<footer>
-		<!--이용약관 등-->
+			<!--이용약관 등-->
+			<div class="f_box">
+				<a>이용약관</a>
+				<a><strong>개인정보처리방침</strong></a>
+				<a>책임의 한계와 법적고지</a>
+				<a>회원정보 고객센터</a>
+				<br><br>
+				<a id="corp">© NAVER Corp.</a>
+			</div>
+
 		</footer>
 	</div>
 
