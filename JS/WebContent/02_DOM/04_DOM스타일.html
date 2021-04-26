@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="box">안녕하세요</div>
+	<script>
+		var div = document.getElementById('box');
+		/* 
+			1. 선택요소.style.css속성
+				1) 하이픈(-) 있으면 제거하고,
+				2) camel case 방식으로 css 속성명을 변경한다.
+				3) 예시
+					선택요소.style.color = "red";
+					선택요소.style.textAlign = "center";
+			2. 선택요소.style[css속성]
+				1) css속성명을 언제나 그대로 사용하고,
+				2) 따옴표로 묶는다.
+				3) 선택요소.style['color'] ='red';
+				4) 선택요소.style[text-align] ='center';
+			3. DOM처리를 통한 CSS변경은 inline 처리되기 때문에 무조건 반영된다.
+		*/
+		div.parentNode.style['display'] = 'flex';
+		div.parentNode.style['justify-content'] = 'center';
+		div.parentNode.style['margin-top'] = '100px';
+		div.style['color'] ='white';
+	 	div.style['border'] ='3px solid navy';
+	 	div.style['background-color'] = 'skyblue';
+	 	div.style['text-align'] = 'center';
+	 	//div.style.boxSizing ='border-box';
+	 	div.style['box-sizing'] = 'border-box';
+	 	div.style['vertical-align'] = 'middle';
+		div.style['width'] = '200px';
+		div.style['height'] ='50px';
+		div.style['lineHeight'] = '50px';
+		div.style['border-radius'] = '5px';
+	</script>
+</body>
+</html>

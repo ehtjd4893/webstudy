@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="one-to-ten"></div>
+	<script>
+		var t = document.getElementById('one-to-ten');
+		var n = 1;
+		
+		/* while(n<=10){
+			var x = document.createElement('a');
+			x.innerHTML = n + '<br>';
+			t.appendChild(x);
+			n++;
+		} */
+		var result = ' ';
+		while(n <= 10){
+			result += n + '<br>';
+			n++;
+		}
+		t.innerHTML = result;
+		t.style.color='blue';
+		t.style.fontSize='20px';
+	</script>
+	
+	<div id="list1"></div>
+	
+	<script>
+		var i = 1;
+		var whole = document.getElementById('list1');
+		var ul = (document.createElement('ul'));		
+		while(i <= 5){
+			var li = document.createElement('li');
+			li.textContent = i;
+			ul.appendChild(li);
+			i++;			
+		}
+		ul.style['list-style-type'] = 'none';
+		whole.appendChild(ul);
+
+		
+		
+	</script>
+	<div id="list2"></div>
+	<script>
+		var i = 1;
+		var result = '<ul>';		
+		while(i <= 5){
+			result += '<li>' + i + '</li>';
+			i++;
+		}
+		result += '</ul>';
+		document.getElementById('list2').innerHTML = result;
+		
+	</script>
+	<div id ="select1"></div>
+	<script>
+		var i = 1;
+		var sel = document.createElement('select');
+		var div = document.getElementById('select1');
+		sel.setAttribute('name','mm');
+		while(i <= 12){
+			var opt = document.createElement('option');
+			opt.textContent = i + '월';
+			opt.setAttribute('value', i);
+			sel.appendChild(opt)
+			i++;
+		}
+		div.appendChild(sel);
+	</script>
+	<div id='select2'></div>
+	<script>
+		var i = 1;
+		var result = "<select name='mm'>";
+		while(i <= 12){
+			result += '<option value=' + i + '>' + i + '월</option>'
+			i++;
+		}
+		result += '</option>';
+		document.getElementById('select2').innerHTML=result;
+	</script>
+</body>
+</html>

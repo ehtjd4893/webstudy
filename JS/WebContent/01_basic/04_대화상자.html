@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		var a,b;
+		 
+		//	1. 경고창
+		//	alert('경고메세지');
+
+		
+		/* 
+			2. 확인창
+		a = confirm('확인메세지'); // '확인' 버튼을 클릭하면 TRUE 반환, '취소' 버튼을 클릭하면 FALSE 반환
+		console.log(a);
+ 		*/		
+
+ 	/* 
+ 		3. 입력창
+	 	b = prompt('입력메세지'); // 입력된 내용을 반환
+		console.log(b);	
+ 	*/	
+ 	/*
+ 		이름을 입력받아서 "내 이름은 xxx입니다."
+ 		나이를 입력 받아서 "성인 / 미성년자이고, 내녀 나이는 xx살입니다."
+ 	*/
+ 	var name, age;
+ 	name = prompt("이름 입력");
+ 	console.log("내 이름은 " + name + "입니다.");
+ 	age = prompt("나이 입력");
+ 	console.log(((parseInt(age) > 19) ? "성인" : "미성년자") 
+ 			+ "이고, 내년 나이는 " + (parseInt(age) + 1) + "살입니다.");
+ 	
+	 </script>
+</head>
+<body>
+
+</body>
+</html>

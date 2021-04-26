@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		var a;	
+		console.log(typeof a); // Undefined
+		a = 1;
+		console.log(typeof a); // Number
+		a = 'Hello';
+		console.log(typeof a); // String
+		a = true;
+		console.log(typeof a); // Boolean
+		a = null;
+		console.log(typeof a); // (Object) Null
+		a = Math.sqrt(-5);	   // -5의 루트값
+		console.log(typeof a);// Number
+		console.log(a);// NaN
+		a = 7 / 0;
+		console.log(typeof a);// Number
+		console.log(a);// Infinite
+		a = 7 / -0;
+		console.log(typeof a);// Number
+		console.log(a);// -Infinite
+		
+		/* 형변환 */
+		// 1. 숫자로 변환하기. : Number(값)
+		//		1) 정수로 변환: parseInt(값)
+		//		2) 실수로 변환: parseFloat(값)
+		// 2. 문자열로 변환하기: String(값)
+		console.log(Number('123'));	// 문자열 '123' -> 숫자 123
+		// 숫자타입은 출력시 파란색으로 표현됨
+		console.log(String(123));	// 숫자123 -> 문자열 123
+		// 문자열타입은 출력시 검정색으로 표현됨.
+		</script>
+</head>
+<body>
+	
+</body>
+</html>
