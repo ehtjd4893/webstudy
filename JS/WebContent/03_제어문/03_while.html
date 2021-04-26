@@ -82,5 +82,29 @@
 		result += '</option>';
 		document.getElementById('select2').innerHTML=result;
 	</script>
+	
+	<div id ="dial"></div>
+	<script>
+		var i = 1;
+		var div = document.getElementById('dial');
+		var table = document.createElement('table');	// 가로 150 세로 200
+		table.style.border='1px solid black';
+		
+		var tr;
+		while(i <= 9){
+			if(i % 3 == 1)
+				tr = document.createElement('tr');
+			var td = document.createElement('td');
+			td.textContent = i;
+			tr.appendChild(td);
+			
+			if( i % 3 == 0)
+				table.appendChild(tr);
+			i++;
+		}
+		tr = document.createElement('tr');
+		tr.innerHTML = "<td>*</td><td>0</td><td>#</td>";
+		table.appendChild(tr);
+	</script>
 </body>
 </html>
