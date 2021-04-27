@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table{
+			border : 1px solid black;
+			border-collapse: collapse;
+		}
+		td{
+			margin: 0;
+			border-bottom: 1px solid black;
+			width : 25px;
+			height : 25px;
+			text-align : center;
+		}
+
+		.even{
+			background-color: beige;
+		}
+
+		#whole{
+			display: flex;
+			justify-content: space-between;
+			width: 1125px;
+			height: 125px;
+			margin:0;
+			padding:0;
+		}
+		#whole > table{
+			margin:0;
+
+		}
+
+	</style>
+</head>
+<body>
+	<div id="practice1"></div>
+	<script>
+		// 정수를 입력받아서 입력받은 구구단 테이블 출력하기
+		let n = prompt('몇 단?');
+		let div = document.getElementById('practice1');
+		let table = document.createElement('table');
+
+		var tr;
+		for(let i = 1; i <= 9; i++){
+			tr = document.createElement('tr');
+			if(i % 2 == 0){
+				tr.setAttribute('class','even');
+			}
+			var td = document.createElement('td');
+			td.textContent = n;
+			tr.appendChild(td);
+
+			td = document.createElement('td');
+			td.textContent = 'x';
+			tr.appendChild(td);
+
+			td = document.createElement('td');
+			td.textContent = i;
+			tr.appendChild(td);
+
+			td = document.createElement('td');
+			td.textContent = '=';
+			tr.appendChild(td);
+
+			td = document.createElement('td');
+			td.textContent = n * i;
+			tr.appendChild(td);
+
+			table.appendChild(tr);
+		}
+		div.appendChild(table);
+	</script>
+
+
+	<div id="whole"></div>
+	<script>
+		let whole = document.getElementById('whole');
+			var tr;
+			for(let n = 2; n <=9;n++){
+				var tb = document.createElement('table');
+				if(n % 2 == 0){
+					tb.style.background = 'yellow';
+				}
+				else{
+					tb.style.background = 'pink';
+				}
+				var td;
+				for(let k = 1; k <= 9; k++){
+					tr = document.createElement('tr');
+					if(n % 2 == 0 && k % 2 == 1){
+						tr.style.background = 'skyblue';
+					}
+					else if(n % 2 == 1 && k % 2 == 0){
+						tr.style.background = 'white';
+					}
+					td = document.createElement('td');
+					td.textContent = n;
+					tr.appendChild(td);
+
+
+					td = document.createElement('td');
+					td.textContent = 'x';
+					tr.appendChild(td);
+
+
+					td = document.createElement('td');
+					td.textContent = k;
+					tr.appendChild(td);
+
+
+					td = document.createElement('td');
+					td.textContent = '=';
+					tr.appendChild(td);
+
+
+					td = document.createElement('td');
+					td.textContent = n*k;
+					tr.appendChild(td);
+
+					tb.appendChild(tr);
+				}
+				whole.appendChild(tb);
+			}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>로그인</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<style>
+		body{
+			display:flex;
+			justify-content: center;
+			background-color: #daeffc;
+		}
+		#container{
+			display: block;
+			width: 600px;
+			height: 1000px;
+			text-align: center;
+			margin: 0 auto;
+		}
+		header{
+			width:100%;
+			height: 300px;
+
+		}
+		#container > header > img{
+			margin-top: 70px;
+			width: 171px;
+			height: 171px;
+		}
+
+		#id-box, #pw-box, #submit-box{
+			width: 100%;
+			height: 60px;
+
+			box-sizing: border-box;
+			padding: 0;
+		}
+		#id-box > input, #pw-box > input, #submit-box > input[type="submit"]{
+			box-sizing: border-box;
+			border: 1px solid deepgrey;
+			padding: 10px;
+			width: 400px;
+			height: 40px;
+			line-height: 100%;
+		}
+		#submit-box{
+			display:block;
+			position:relative;
+		}
+		#submit-box > input[type="submit"]{
+			background-color: navy;
+			color:white;
+			font-size: 16px;
+			border:none;
+			cursor: pointer;
+		}
+		#chk{
+			position:absolute;
+			left: 17%;
+			width: 400px;
+			display:flex;
+		}
+		footer{
+			margin-top: 30px;
+		}
+		footer > span, footer > i{
+			color: grey;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<header>
+		<img src ="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.6435-9/70211854_2542027242750570_8589501762375778304_n.png?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeHdx7X4zxmXojXmQ8jg9AaT3oUiZS6J7iDehSJlLonuIF8QPRTsoDvA48goCwZwOPxzihlQPIjzh29DwmTy11a8&_nc_ohc=D2QzLLazxKwAX-iWYwb&_nc_ht=scontent-ssn1-1.xx&oh=605bdbfd8dcc39db2b892b135f3cd634&oe=60AB8F0B">
+		</header>
+		<section>
+			<form method="post" action="board.html">
+				<div id="id-box">
+					<input type="text" placeholder="계정">
+				</div>
+				<div id="pw-box">
+					<input type="password" placeholder="비밀번호">
+				</div>
+				<div id="submit-box">
+					<input type="submit" value="로그인"><br>
+					<div id="chk">
+						<input type="checkbox" name="auto-login">자동 로그인
+						<input type="checkbox" name="remember-pw">비밀번호 저장
+					</div>
+				</div>
+
+
+
+			</form>
+		</section>
+
+		<footer>
+			<i class="fas fa-cog"></i><span>환경설정</span>
+
+		</footer>
+	</div>
+</body>
+
+</html>

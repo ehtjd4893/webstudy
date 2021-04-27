@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table{
+			border-collapse : collapse;
+			border: 1px solid black;
+		}
+		td{
+			border: 1px solid black;
+			width: 20px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="practice1"></div>
+	<script>
+		var table = document.createElement('table');
+		var tr;
+		var td;
+		for(let n = 1; n < 100; n++){
+			var digits = n % 10;
+			var tens = parseInt(n / 10);
+			if(digits == 1)
+				tr = document.createElement('tr');
+			td = document.createElement('td');
+			if((digits != 0 && digits % 3 == 0) || (tens != 0 && tens % 3 == 0)){
+					td.textContent=' ';
+			}
+			else
+				td.textContent = n;
+			tr.appendChild(td);
+
+			if(digits == 0 && tens != 0)
+				table.appendChild(tr);
+		}
+		document.getElementById('practice1').appendChild(table);
+	</script>
+
+
+
+
+		<!-- 5개의 양수를 입력 받아서 그 평균을 출력
+			양수 이외의 데이터가 입력되면 양수가 아닙니다. 다시 입력하세요.
+			메시지를 출력한 뒤 다시 입력을 받으시오.
+		 -->
+	<div id="practice2"></div>
+	<script>
+		var i = 1;
+		var sum = 0;
+		 while(i <= 5){
+		 	var input = Number(prompt(i +'번째 양수 입력'));
+		 	if(isNaN(input) || input <= 0){
+		 		alert('양수가 아닙니다. 다시 입력하세요.');
+		 		continue;
+		 	}
+		 	else{
+		 		i++;
+		 		sum += input;
+		 	}
+	 	}
+		 var avg = parseFloat(sum / 5);
+		 alert('평균: ' + avg + '점');
+		 document.getElementById('practice2').textContent = '평균: ' + avg + '점';
+	</script>
+</body>
+</html>
