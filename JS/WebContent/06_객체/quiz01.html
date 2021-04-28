@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table{
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		thead{
+			font-weight: 800;
+		}
+		td{
+			border: 1px solid black;
+		}
+		
+	</style>
+	<script>
+
+	
+	</script>
+</head>
+<body>
+	<div id="practice1"></div>
+	<script>
+		var people = [{'name': '브레드', 'age':10},
+				{'name': '윌크', 'age':5},
+				{'name': '초코', 'age':4}]
+		var div = document.getElementById('practice1');
+		var table = document.createElement('table');
+		var thead = document.createElement('thead');
+		var tbody = document.createElement('tbody');
+		
+		var tr;
+		var td;
+		var first = true;
+		var head_tr = document.createElement('tr');
+		
+		for(var p in people[0]){
+			td =  document.createElement('td');
+			td.textContent = p;
+			head_tr.appendChild(td);
+		}
+		thead.appendChild(head_tr);
+		table.appendChild(thead);
+		
+		
+		for(var obj in people){
+
+			tr = document.createElement('tr');
+			for(var p in people[obj]){
+				//console.log(people[obj][p]);
+
+				console.log(people[obj][p]);
+				td = document.createElement('td');
+				td.textContent = people[obj][p];
+				tr.appendChild(td);
+			}
+			tbody.appendChild(tr)	
+			first = false;
+		}
+		table.appendChild(tbody);
+		div.appendChild(table);
+	</script>
+</body>
+</html>

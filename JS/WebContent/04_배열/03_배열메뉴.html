@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 100%;
+			list-style-type: none;
+			overflow: hidden;
+		}
+		li{
+			width: 100px;
+			height: 45px;
+			float: left;
+			border-bottom: 1px solid red;
+		}
+		a{
+			text-align:center;
+			display: block;
+			width: 100%;
+			height: 45px;
+			line-height: 45px;
+			color: black;
+			text-decoration: none;
+		}
+		a:hover{
+			color:red;
+			border-bottom: 3px solid red;
+		}
+	</style>
+	<script>
+		
+	</script>
+</head>
+<body>
+	<ul>
+		<li><a href="javascript:void(0)">사전</a></li>
+		<li><a href="javascript:void(0)">뉴스</a></li>
+		<li><a href="javascript:void(0)">증권</a></li>
+		<li><a href="javascript:void(0)">부동산</a></li>
+		<li><a href="javascript:void(0)">지도</a></li>
+	</ul>
+	<header>
+		<div class="gnb"></div>
+	</header>
+	
+	<script>
+		var menu = ['메일','카페','블로그','쇼핑','Pay'];
+		var link = ['javascript:void(0)','javascript:void(0)','javascript:void(0)','javascript:void(0)','javascript:void(0)'];
+		var gnb = document.getElementsByClassName('gnb')[0];
+		var ul = document.createElement('ul');
+		var li, a;
+		for(let i = 0; i < menu.length; i++){
+			a = document.createElement('a');
+			a.textContent = menu[i];
+			a.setAttribute('href',link[i]);
+			
+			li = document.createElement('li');
+			li.appendChild(a);
+			ul.appendChild(li);
+		}
+		gnb.appendChild(ul);
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>제목</th>
+				<th>저자</th>
+				<th>가격</th>
+				<th>출판사</th>
+			</tr>
+		</thead>
+		<tbody id = "contents">
+		
+		</tbody>
+	</table>
+	
+	<script>
+		var books = [{
+				'title':'나는 자바다',
+				'writer': '김자바',
+				'price': 30000,
+				'publisher':'자바출판사'
+			},{
+				'title':'나는 씨플이다',
+				'writer': '김씨플',
+				'price': 20000,
+				'publisher':'씨플출판사'
+			},{
+				'title':'나는 파이썬이다',
+				'writer': '김파이',
+				'price': 10000,
+				'publisher':'파이썬출판사'
+			}
+		];
+		var tbody = document.getElementById('contents');
+		var tr,td;
+		
+		for(let i in books){
+			tr = document.createElement('tr');
+			for(let k in books[i]){
+				td = document.createElement('td');
+				td.textContent = books[i][k];
+				tr.appendChild(td);
+			}
+			tbody.appendChild(tr);
+		}
+	</script>
+
+</body>
+</html>
