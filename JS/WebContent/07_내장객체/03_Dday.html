@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Dday 2021년 11월 18일 목요일 -->
+	<!-- Dday 100일 10시간 5분 30초 (검정색표시)
+		 Dday 1일 미만, 23시간 30분 20초(빨간색)
+		 Dday 입니다. 
+	-->
+	<h1>D-day <span id="d-day"></span></h1>
+	<h1>D-day <span id="remain"></span></h1>
+	<script>
+		function fillzero(n){
+			if(n < 10)
+				return "0" + n;
+			else
+				return n;
+		}
+	
+		var weekname =['일','월','화','수','목','금','토'];
+	
+		(function dday(){
+			setTimeout(function(){
+				var d_day = new Date(2021,10,18,4);
+				document.getElementById('d-day').textContent =
+					d_day.getFullYear() +"년 " + fillzero(d_day.getMonth()) + "월 " + fillzero(d_day.getDate()) + "일 "  + weekname[d_day.getDay()] + "요일";
+				
+				var today = new Date();
+				var restTime = d_day.getTime() - today.getTime();
+				var result = '';
+				
+				if(restTime <= 0){
+					result = '입니다.'
+					return;
+				}
+				
+				// 남은 시간(밀리초) -> 일, 시, 분, 초
+				restTime = parseInt(restTime / 1000);
+				var second = restTime % 60;
+				var minute = parseInt(restTime / 60) % 60;
+				var hour = parseInt(restTime / 3600) % 24;
+				var date = parseInt(restTime / 3600 / 24);
+				
+				if(date > 0){
+					result += "-" +  date + "일&nbsp;";
+				}
+	
+				result += (hour + '시&nbsp;' + minute + '분&nbsp;' + second + '초&nbsp');							
+				console.log(result);
+				document.getElementById('remain').innerHTML = result;
+				if(date == 0)
+					document.getElementById('remain').style.color = "red";
+				dday();
+			},1000);
+		})();
+
+	</script>
+</body>
+</html>

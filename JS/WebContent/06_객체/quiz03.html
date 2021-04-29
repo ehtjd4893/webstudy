@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		/* 
+			생성자 함수 Student를 구현하시오.
+			1. 매개변수: name, kor, eng, mat
+			2. 프로퍼티: name, kor, eng, mat, getAverage, getGrade
+		*/
+		function Student(name, kor, eng, mat){
+				this.name = name;
+				this.kor = kor;
+				this.eng = eng;
+				this.mat = mat;
+				this.__proto__.getAverage = function(){
+					return parseFloat(this.kor + this.eng + this.mat) / 3.0;
+				}
+				this.__proto__.getGrade = function(){
+					var a = this.getAverage();
+					if(a >= 90)
+						return 'A';
+					else if(a >= 80)
+						return 'B';
+					else if(a >= 70)
+						return 'C';
+					else if(a >= 60)
+						return 'D';
+					else 
+						return 'F';					
+				}
+		}
+		
+	
+		var s = [new Student('도성',50,80,70), new Student('해창',60,100,90)];
+		
+		for(let i = 0; i < s.length; i++){
+			for(let p in s[i]){
+				if(p == 'getAverage' || p == 'getGrade'){
+					console.log(s[i][p]());
+				}
+				else
+					console.log(p + ": " + s[i][p]);
+			}
+
+		}
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
