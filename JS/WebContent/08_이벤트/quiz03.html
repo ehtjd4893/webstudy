@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		// 난수 만들기 버튼을 클릭하면 0~9 사이의 난수 출력
+
+	
+		onload = function(){
+			var r_btn = document.getElementById('random-btn');
+			r_btn.addEventListener('click',function(){
+				var r = Math.trunc((Math.random() * 10));
+				document.getElementById('random-box').textContent = "난수 발생: " + r;
+			});
+			
+			
+			var img_btn = document.getElementById('image-btn');
+			var path = '../images/';
+			var img_arr = ['cat.jpg','dog.jpg','lion.jpg','eagle.jpg','apple.png'];
+			
+			img_btn.addEventListener('click',function(){
+				var img_box =document.getElementById('image-box');
+				var img_idx = parseInt(Math.random() * img_arr.length);
+				img_box.style.backgroundImage = ('url(' + path + img_arr[img_idx] + ')');
+			});
+			
+			var img_btn2 = document.getElementById('image-btn2');
+			
+			var idx = 0;
+			
+			img_btn2.addEventListener('click',function(){
+				var img_box2 =document.getElementById('image-box2');
+			
+				var img = document.createElement('img');
+				img.setAttribute('src',(path + img_arr[idx++]));
+				img.setAttribute('id','dom_img');
+				idx %= img_arr.length;
+				document.getElementById('dom_img')
+				console.log(dom_img);
+				img_box2.removeChild(document.getElementById('dom_img'));
+				img_box2.appendChild(img);
+			})
+		}
+	</script>
+	
+	<style>
+		#image-box{
+			width:500px;
+			height:500px;
+			background-image: url(../images/apple.png);
+			background-size: 500px 500px;
+			box-sizing: border-box;
+			border-radius: 20px;
+		}
+	
+	</style>
+</head>
+<body>
+	<input type="button" value="난수만들기" id="random-btn">
+	<div id="random-box"></div>
+	<input type="button" value="이미지 변경하기" id="image-btn">
+	<div id="image-box"></div>
+	<input type="button" value="이미지 변경하기2" id="image-btn2">
+	<div id="image-box2"><img id="dom_img"></div>
+</body>
+</html>
