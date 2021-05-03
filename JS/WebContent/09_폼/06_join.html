@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>quiz16</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<link rel="stylesheet" href="../styles/join.css">
+	
+</head>
+<body>
+	<div class="container">
+		<header>
+		<!-- 네이버 로고 -->
+			<h1><a href="http://www.naver.com/"><img src="../images/NAVER.jpg"></a></h1>
+		</header>
+		<section>
+			<form method="post">
+				<!-- 아이디label, input -->
+				<div class="join_row">
+					<!-- 아이디 인풋상자 -->
+					<div class="ps_box">
+						<label for="id">아이디</label>
+						<input type="text" id="id">
+						<span id="address">@naver.com</span>
+					</div>
+					<!-- 아이디체크 결과 -->
+					<span id="id-check"></span>
+				</div>
+
+				<div class="join_row">
+					<!-- 패스워드 인풋상자 -->
+					<div class="ps_box">
+						<label for="pw">비밀번호</label>
+						<input type="password" id="pw">
+						<span id="icon1" ><i class="fas fa-lock"></i></span>
+					</div>
+					<span id="pw-check1"></span>
+				</div>
+
+				<div class="join_row">
+					<!-- 패스워드 확인 인풋상자 -->	
+					<div class="ps_box">
+						<label for="pw_re">비밀번호 확인</label>
+						<input type="password" id="pw_re">
+						<span id="icon2" ><i class="far fa-check-circle"></i></span>
+					</div>
+					<span id="pw-check2"></span>
+					</div>
+				<br><br><br>
+				<div class="join_row">
+					<!-- 이름 인풋상자 -->
+					<div class="ps_box">
+						<label for="name">이름</label>
+						<input type="text" id="name">
+					</div>
+					<span id="name-check"></span>
+				</div>
+
+				<div class="join_row">
+					<!-- 이름 인풋상자 -->
+					<div class="ps_box">
+						<label for="bd">생년월일</label>
+						<div class="bd_box">
+							<input type="text" id="bd" placeholder="년(4자)">
+							<select>
+								<option>월</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+							</select>
+							<input type="text" id="bd" placeholder="일">
+						</div>
+					</div>
+				</div>
+
+				<div class="join_row">
+					<!-- 이름 인풋상자 -->
+					<div class="ps_box">
+						<label for="gender">성별</label>
+						<select id ="gender">
+							<option>성별</option>
+							<option>남자</option>
+							<option>여자</option>
+							<option>선택 안 함</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="join_row">
+					<!-- 이름 인풋상자 -->
+					<div class="ps_box">
+						<label for="email">본인 확인 이메일<span>(선택)</span></label>
+						<input type="text" id="email">
+					</div>
+				</div>
+
+				<div class="join_row">
+					<!-- 이름 인풋상자 -->
+					<div class="ps_box">
+						<label for="phone">휴대전화</label>
+						<select id ="phone">
+							<option>니제르 +227</option>
+							<option>네팔 +977</option>
+							<option>기니 +224</option>
+							<option selected>대한민국 +82</option>
+						</select>
+						<input type="text" id="phone_num" placeholder="전화번호 입력">
+						<input type="button" id="put" value="인증번호 받기"><br>
+						<input type="text" id="prove" placeholder="인증번호 입력하세요." disabled>
+					</div>
+				</div>
+				<input type="submit" value="가입하기">
+			</form>
+		</section>
+
+		<footer>
+			<!--이용약관 등-->
+			<div class="f_box">
+				<a>이용약관</a>
+				<a><strong>개인정보처리방침</strong></a>
+				<a>책임의 한계와 법적고지</a>
+				<a>회원정보 고객센터</a>
+				<br><br>
+				<a id="corp">© NAVER Corp.</a>
+			</div>
+
+		</footer>
+	</div>
+	<script>
+		var id = document.getElementById('id');
+		id.addEventListener('blur',function(){
+			var idCheck = document.getElementById('id-check');
+			if(id.value ==''){
+				idCheck.setAttribute('class','check_fail');
+				idCheck.textContent = '필수 정보입니다.';
+				id.focus();
+			}else{
+				var regID = /^[a-z0-9][a-z0-9_-]{4,19}$/;
+				if(regID.test(id.value)){
+					idCheck.textContent = '멋진 ID입니다!';
+					idCheck.setAttribute('class','check_pass');
+				}
+				else{
+					idCheck.setAttribute('class','check_fail');
+					idCheck.textContent = '5~20자의 영문 소문자, 숫자, -, _ 로 입력해주세요.';
+				}
+			}
+
+		});
+		var pw = document.getElementById('pw');
+		pw.addEventListener('blur',function(){
+			var pwCheck = document.getElementById('pw-check1');
+			if(pw.value ==''){
+				pwCheck.setAttribute('class','check_fail');
+				pwCheck.textContent = '필수 정보입니다.';
+				document.getElementById('icon1').style.color ="red";
+				document.getElementById('icon1').setAttribute('class','danger');
+			}else{
+				var regPW = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[~!@#$%^&*])[A-Za-z0-9~!@#$%^&*]{8,16}/;
+				if(regPW.test(pw.value)){
+					pwCheck.textContent = '안전';
+					pwCheck.setAttribute('class','check_pass');
+					document.getElementById('icon1').style.color ="#03c75a";
+					document.getElementById('icon1').setAttribute('class','safe');
+				}
+				else{
+					pwCheck.setAttribute('class','check_fail');
+					pwCheck.textContent = '8~16자 영문 대 소문자, 숫자, 특수문자 조합하세요.';
+					document.getElementById('icon1').style.color ="red";
+					document.getElementById('icon1').setAttribute('class','danger');
+				}
+			}
+		});
+		var pw_re = document.getElementById('pw_re');
+		pw_re.addEventListener('blur',function(){
+			pwCheck = document.getElementById('pw-check2');
+			if(pw.value ==''){
+				pwCheck.setAttribute('class','check_fail');
+				pwCheck.textContent = '필수 정보입니다.';
+				document.getElementById('icon2').style.color ="red";
+				document.getElementById('icon2').setAttribute('class','danger');
+			}else{
+				var regPW = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[~!@#$%^&*])[A-Za-z0-9~!@#$%^&*]{8,16}/;
+				if(pw.value == pw_re.value){
+					pwCheck.textContent = '일치';
+					pwCheck.setAttribute('class','check_pass');
+					document.getElementById('icon2').style.color ="#03c75a";
+					document.getElementById('icon2').setAttribute('class','safe');
+				}
+				else{
+					pwCheck.setAttribute('class','check_fail');
+					pwCheck.textContent = '불일치.';
+					document.getElementById('icon2').style.color ="red";
+					document.getElementById('icon2').setAttribute('class','danger');
+				}
+			}
+		});
+		var name1 = document.getElementById('name');
+		console.log(name);
+		name1.addEventListener('blur',function(){
+			var nameCheck = document.getElementById('name-check');
+			if(name1.value==''){
+				nameCheck.textContent='필수 항목입니다.';
+				nameCheck.setAttribute('class','check_fail');
+			}else{
+				var regName = /^[가-힣a-zA-Z]+$/;
+				if(regName.test(name1.value)){
+					nameCheck.textContent = '';
+				}else{
+					nameCheck.textContent = '한글과 영문 대소문자를 사용하세요.(공백 특수문자 불가)';
+					nameCheck.setAttribute('class','check_fail');
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>
