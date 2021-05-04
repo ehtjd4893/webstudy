@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+</script>
+</head>
+<body>
+	<form method="post" name="f">
+		<select name ="moveTo">
+			<option value="" selected>이동할 사이트 선택</option>
+			<option value="https://www.google.com">구글</option>
+			<option value="https://www.naver.com">네이버</option>
+			<option value="https://www.kakao.com">카카오</option>
+		</select>
+		<input type="button" value="이동" id="go" onclick="goToSite()">
+	</form>
+	<script>
+		function goToSite(){
+			var moveTo = document.forms.f.moveTo;
+			
+			if(moveTo.value == ''){
+				alert('이동할 사이트 선택하세요!');
+				moveTo.focus();
+				return;
+			}
+			else
+				window.open(moveTo.value,'','');
+				// location.href = moveTo.value;
+		}
+	</script>
+</body>
+</html>
