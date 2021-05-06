@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		onload = function(){
+			var request = new XMLHttpRequest();
+			request.open('get','quiz02.xml',true);
+			request.send();
+			
+			request.onreadystatechange = function(){
+				if(request.readyState == 4 && request.status == 200){
+					var resXML = request.responseXML;
+					var items = resXML.getElementsByTagName('item');
+					
+					var tr;
+					var td;
+					// title, description, link, pubDate
+					var receive = document.getElementById('receive');
+					for(let k = 0; items.length; k++){
+						tr = document.createElement('tr');
+									
+						td = document.createElement('td');
+						td.innerHTML = items[k].getElementsByTagName('title')[0].innerHTML;
+						tr.appendChild(td);
+						
+						td = document.createElement('td');
+						td.innerHTML = items[k].getElementsByTagName('description')[0].innerHTML;
+						tr.appendChild(td);
+						
+						td = document.createElement('td');
+						var a = document.createElement('a');
+						a.setAttribute('href',items[k].getElementsByTagName('link')[0].textContent);
+						a.textContent='링크';
+						td.appendChild(a);
+						tr.appendChild(td);
+						
+						td = document.createElement('td');
+						td.textContent = items[k].getElementsByTagName('pubDate')[0].textContent;
+						tr.appendChild(td);
+						
+						receive.appendChild(tr);
+					}
+				}
+			}	
+		}
+	</script>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>제목</td>
+				<td>내용</td>
+				<td>링크</td>
+				<td>작성일</td>
+			</tr>
+		</thead>
+		<tbody id="receive"></tbody>
+	</table>
+</body>
+</html>

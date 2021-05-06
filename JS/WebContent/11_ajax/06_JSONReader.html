@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		onload = function(){
+			document.getElementById('get_btn').addEventListener('click',function(){
+				getCar();
+			});
+			function getCar(){
+				var request = new XMLHttpRequest();
+				request.open('get','data.json',true);
+				request.send();
+				request.onreadystatechange = function(){
+					if(request.readyState == 4 && request.status == 200){
+						// ajax 통신으로 받아온 JSTO 데이터는 string이다
+						// 객체(object)로 바꿔야 한다.
+						var resText = request.responseText;	// string type
+						var resJSON = JSON.parse(resText);	// json type
+							/* resText = {
+									"model": "520d",
+									"price": 7600,
+									"manufacture": "2021-03-05",
+									"company":{
+										"name":"bmw",
+										"contry": "germany"
+									},
+									"option": [
+										"HUD",
+										"Advanced Cruise",
+										"AutoHold"
+									]
+								} */
+						var ul = document.getElementById('receive');
+						var li = document.createElement('li');
+						li.textContent = resJSON.model;
+						ul.appendChild(li);
+						
+						var li = document.createElement('li');
+						li.textContent = resJSON.price;
+						ul.appendChild(li);
+						
+						var li = document.createElement('li');
+						li.textContent = resJSON.manufacture;
+						ul.appendChild(li);
+						
+						var li = document.createElement('li');
+						//li.textContent = resJSON.company.name + ", " + resJSON.company.contry;
+						var company = resJSON.company;
+						var result = '';
+						for(let p in company){
+							// company.p : company."name" company."country"와 같은 형식이 되므로 사용 불가
+							// company[p]: company["name"] company["contry"]와 같이 사용한다.
+							result+= company[p] + ' ';	
+						}
+						li.textContent = result;
+						ul.appendChild(li);
+						
+						
+						
+						var li = document.createElement('li');
+						var result = '';
+						for(let i = 0; i < resJSON.option.length; i++){
+							result += resJSON.option[i];
+							if(i != resJSON.option.length - 1)
+							result += " + ";
+						}
+						li.textContent = result;
+						ul.appendChild(li);
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="자동차 정보 가져오기" id="get_btn">
+	<br><br>
+	<ul id="receive">
+		
+	</ul>
+</body>
+</html>

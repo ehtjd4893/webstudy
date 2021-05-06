@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		
+		onload = function(){
+			var request = new XMLHttpRequest();
+			request.open('get','quiz01.xml',true);
+			request.send();
+			
+			request.onreadystatechange = function(){
+				if(request.readyState == 4 && request.status == 200){
+				
+					var resXML = request.responseXML;
+					var receive = document.getElementById('receive');
+			
+			
+					var names = resXML.getElementsByTagName('name');
+					var ages = resXML.getElementsByTagName('age');
+					var addresses = resXML.getElementsByTagName('address');
+					var tels = resXML.getElementsByTagName('tel');
+					
+					var tr;
+					var td;
+					for(var k = 0; k < names.length; k++){
+						tr = document.createElement('tr');
+						
+						td = document.createElement('td');
+						td.textContent = names[k].textContent;
+						tr.appendChild(td);
+			
+						td = document.createElement('td');
+						td.textContent = ages[k].textContent;
+						tr.appendChild(td);
+						
+						td = document.createElement('td');
+						td.textContent = addresses[k].textContent;
+						tr.appendChild(td);
+						
+						td = document.createElement('td');
+						td.textContent = tels[k].textContent;
+						tr.appendChild(td);
+						
+						receive.appendChild(tr);
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<td>이름</td>
+				<td>나이</td>
+				<td>주소</td>
+				<td>연락처</td>
+			</tr>
+		</thead>
+		<tbody id="receive">
+			
+		</tbody>
+	</table>
+</body>
+</html>
