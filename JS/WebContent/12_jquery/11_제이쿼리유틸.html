@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		// 페이지 로드 이벤트
+		$(function(){
+			// 배열
+			const season = ['봄','여름','가을','겨울'];
+			const $div = $('#content')
+			const $ul = $('<ul>');		
+			$div.append($ul);
+			// $.each(배열,function(인덱스, 각각의 요소){})
+			$.each(season, function(i, item){
+				//$ul.append($('<li>').text(item));
+				$('<li>').text(item).appendTo($ul);
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id="content"></div>
+</body>
+</html>

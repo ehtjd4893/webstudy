@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+		// 페이지 로드 이벤트
+		$(document).ready(function(){
+			const css = $('#css')
+		
+			
+			// css의 부모 확인
+			console.log($(css).parent())
+			const ul = $(css).parent()
+			
+			//css 부모의 자식 확인
+			console.log($(css).parent().children())
+			console.log($(ul).children())
+			
+			// css의 형제 확인
+			console.log($(css).prev())	// css 이전 형제
+			console.log($(css).next())	// css 다음 형제
+			console.log($(css).siblings())	// css의 형제 전체
+			
+			
+			$(css).parent().css('list-style-type','none')
+			$(ul).children().css('color','red')
+			$(css).css('color','skyblue')
+			$(css).prev().css('background-color','yellow')
+		})
+	</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>HTML</li>
+			<li id="css">CSS</li>
+			<li>JavaScript</li>
+			<li>JQuery</li>
+		</ul>
+	
+	</div>
+</body>
+</html>
